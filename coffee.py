@@ -117,7 +117,7 @@ with tab3:
     m.add_js_funcs(f"echarts.registerMap('worldMap', {json.dumps(world_json)});")
 
     m.add(
-        "平均咖啡摄入量",
+        "",#去掉图例
         data_list,
         maptype="worldMap",
         is_map_symbol_show=False,
