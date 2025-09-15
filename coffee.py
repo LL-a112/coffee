@@ -132,8 +132,8 @@ with tab3:
         min_=min_val,
         max_=max_val,
         is_calculable=True,
-        range_text=["Low", "High"],
-        in_range={"color": ["#FFE0B2", "#FF5722"]}  # 渐变颜色
+        range_text=["Low", "High"]
+      
     ),
     tooltip_opts=opts.TooltipOpts(trigger="item")
 )
