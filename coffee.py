@@ -123,15 +123,19 @@ with tab3:
         is_map_symbol_show=False
     )
 
+    min_val = float(country_avg['Coffee_Intake'].min() or 0)
+    max_val = float(country_avg['Coffee_Intake'].max() or 1)
+
     m.set_global_opts(
-        visualmap_opts=opts.VisualMapOpts(
-            min_=float(country_avg['Coffee_Intake'].min()),
-            max_=float(country_avg['Coffee_Intake'].max()),
-            text=["High", "Low"],
-            is_calculable=True
-        ),
-        tooltip_opts=opts.TooltipOpts(trigger="item")
-    )
+       visualmap_opts=opts.VisualMapOpts(
+        min_=min_val,
+        max_=max_val,
+        is_calculable=True,
+        range_text=["Low", "High"]
+    ),
+    tooltip_opts=opts.TooltipOpts(trigger="item")
+)
+
 
     html(m.render_embed(), height=600)
 
