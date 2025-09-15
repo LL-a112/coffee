@@ -120,7 +120,8 @@ with tab3:
         "平均咖啡摄入量",
         data_list,
         maptype="worldMap",
-        is_map_symbol_show=False
+        is_map_symbol_show=False,
+        label_opts=opts.LabelOpts(is_show=False)  # 不显示国家名称
     )
 
     min_val = float(country_avg['Coffee_Intake'].min() or 0)
@@ -131,7 +132,8 @@ with tab3:
         min_=min_val,
         max_=max_val,
         is_calculable=True,
-        range_text=["Low", "High"]
+        range_text=["Low", "High"],
+        in_range={"color": ["#FFE0B2", "#FF5722"]}  # 渐变颜色
     ),
     tooltip_opts=opts.TooltipOpts(trigger="item")
 )
